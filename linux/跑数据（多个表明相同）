@@ -1,0 +1,1 @@
+echo 'select * from table where ...' |mysql -h(host)-P(port大写) -u (username) -p(password 小写) >>(追加到文章)
