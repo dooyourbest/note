@@ -1,0 +1,4 @@
+错误28000:
+mysql5.6版本以后的mysql数据库安装时第一次会自动建立一个密码,首先进入/etc/mysql/my.ini 中在mysqld 下面添加一句skip-grant-tables
+这样的话首次登录是免密登录，之后修改数据库即可
+mysql数据库修改帐号：修改mysql库下面的user 表中的root账户的密码:update user set authentication_string =password('root') where user='root';

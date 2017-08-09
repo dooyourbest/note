@@ -1,0 +1,11 @@
+1 sudo apt-get install nginx;
+service ngixn start;
+sudo apt-get install php7.0;
+sudo apt-get install php-fpm;
+//安装laravel依赖 sudo apt-get install php-mcrypt
+修改php.ini中的/etc/php/fpm/php.ini 中的cgi.fix_pathinfo=0(此处在php手册中有介绍将其设置为1将导致PHP CGI修复其路径以符合规范。 设置为零会导致PHP的行为与之前一样。 默认情况下打开。 您应该修复脚本以使用SCRIPT_FILENAME而不是PATH_TRANSLATED。)
+将nginx的php权限修改
+配置php-fpm 此处为重点，实现php-fpm的转发就是要监听进程，
+首先要开启nginx的nginx.conf 中的~php 转发，然后打开其中的监听转发几口pid
+流程：/etc/nginx/nginx.conf (fastcgi_pass unix:/run/php/php7.0-fpm.sock;) 打开nginx 的php转发设置，打开监听借口，nginx可能用include的方式引入了site-availiable/deafult配置，进行配置
+   修改php-fpm信息的相关内容修改php-fpm/php-fpm.conf的相关信息 pid = /run/php/php7.0-fpm.pid
