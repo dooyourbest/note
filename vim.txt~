@@ -1,0 +1,3 @@
+vim 配置
+首先新建一个~/.vimrc
+然后再vim 中使用:edit $VIMRUNTIME/vimrc

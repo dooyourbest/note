@@ -1,0 +1,12 @@
+counter = 100;
+miles = 100.0;
+name = 'zhangsan';
+list = [1,2,3,4,5];
+print counter;
+print miles;
+print name;
+print name[0:5];
+print list[0:1];
+print list[0:2];
+print list[0:3];
+print list[0:4];
