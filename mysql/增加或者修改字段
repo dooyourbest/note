@@ -1,0 +1,2 @@
+增加字段:alter table table_name add field_name int(11)unsigned not null '
+修改字段:alter table table_name alter column field_time set default 0;
