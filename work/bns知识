@@ -1,0 +1,3 @@
+获取机器所属bns get_service_by_host
+获取服务下所有的实例信息 get_instance_by_service
+
