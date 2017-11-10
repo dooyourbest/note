@@ -1,0 +1,3 @@
+mongo一般是用于缓存
+安转mongo serve端口启动/bin/mongod 默认端口12707
+安装前需要先进行操作/data/db设置目录

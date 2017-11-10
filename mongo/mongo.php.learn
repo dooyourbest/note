@@ -1,0 +1,11 @@
+mongo的php拓展和操作
+wget url 找个mongodb拓展和操作;
+php/bin/phpize 
+./configure --prefix=/php/bin/php-config
+make
+cd /module 找到mongo.so
+放到php/ext下
+在etc配置文件中增加extension=mongo.so//大概
+php 操作
+实例化mongoclient():
+    $mongodb->$(collection_name)->find();类似

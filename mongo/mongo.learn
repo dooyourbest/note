@@ -1,0 +1,10 @@
+mongo的基本用法
+mongo-bin操作
+show dbs;查找所有的数据库存
+use db_name;用某个数据库
+show collections 展示数据库下的所有集合
+db.collection_name.stats();展示数据库集合信息
+db.collection_name.find();查找find({})查询条件为一个json对象
+db.collection_name.find().pertty();格式化
+db.collection_name.findOne();查找一个
+db.collection_name.count();数量查找
