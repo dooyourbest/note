@@ -1,0 +1,4 @@
+mongo 备份两种方式mongodump 和mongoexport
+dump 全库备份速度快
+mongoexport 指定备份
+mongoexport -h host:port -d vio_v2 -c car -f plate --type csv -o mongo_car_plate.csv
