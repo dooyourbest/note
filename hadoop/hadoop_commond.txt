@@ -1,0 +1,30 @@
+上传hdfs 文件
+./hadoop fs -put localfile hdfs_filename
+下载文件
+./hadoop fs -get hadf_filename localfile
+下载一个目录中的文件
+./hadoop fs -getmerge hdfs_filename localfile
+运行脚本
+./hadoop 
+streaming  
+-D mapred.map.tasks=2000 任务数量2000 会在输出目录生成2000个文件
+ -input hdfs_filename 上传的hdfs 文件
+-mapper test_php.php  //map执行的开发机上写的脚本名称
+-file filename //开发机上脚本的绝对路径
+ -reducer "NONE" //没有用到reducer过程填 NONE
+ -file 脚本用的到的文件名--绝对路径
+ php script
+ #!/home/sharelib/php/bin/php //注意本地脚本调用的解释器不是本地解释器，执行的时候是hadoop上的php解释器，路径不一样
+<?php
+$in=fopen("php://stdin","r");
+$arr=array();
+while($line = fgets($in)){
+    $arr[]=$line;
+}
+fclose($in);
+    foreach ($arr as $row){
+$phone=trim($row);
+    $var=md5($phone);
+    print "$phone $var\n";
+    }
+exit(0);

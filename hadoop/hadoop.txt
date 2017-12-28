@@ -1,0 +1,9 @@
+hadoop架构
+hadoop用于主要目的处理大文件，并通过分拆的方式进行处理。
+架构：
+处理大数据需要保证速度，hadoop的设计了两部分用于处理这些数据，存储系统和计算系统。存储系统hdfs,计算系统mapreduce
+通过这两个部分就可以处理大量数据
+hdfs是hadoop distributed file stystem 分布式文件系统
+hdfs存储包括两部分 namenode datanode  相当于主从模式，namenode记录所有的datanode 的信息，datanode 是用于存储的最小单元，通过namenode 的调度 hadoop客户端就可以将大量数据拆分，存入datanode.
+hdfs 存储过程，hadoop-client 将相关信息发给namenode namenode进行分析，返回信息，hadoop-client根据返回信息，将文件拆分，存入datanode,datanode 然后备份，完成之后，datanode 将信息返回client,client将信息传给namenode，完成写操作
+

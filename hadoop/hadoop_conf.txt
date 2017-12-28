@@ -1,0 +1,2 @@
+1配置conf/hadoop-env.sh export JAVA_HOME=/home/java/jdk1.6 //百度默认配置好的 ，调用的java jdk
+2配置hadoop-site.xml 这是描述集群中namenode借点的url（包括协议，主机，名称，端口 ）集群中的每台机器需要知道namenode,然后datanode去注册，数据才能被使用
