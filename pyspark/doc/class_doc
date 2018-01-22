@@ -1,0 +1,38 @@
+sparkContent:主要为spark提供的入口
+RDD :弹性分布式数据集,saprk的基本单位的抽象
+Broadcast:可以横跨不同任务，重复使用的广播变量
+Accumulator:收集器，累加器，不通任务可以共享的只能进行累加的变量
+SparkConf :用来配置spark
+SparkFiles:为任务提供提供文件
+StorageLevel:为持久缓存提供细粒度等级
+TaskContext:正在运行的任务的相关信息，可以用于实验和工作
+
+class pyspark SparkConf(loadDefault=True,_javj=NOne,_conf=None)
+ 配置spark应用，用于将各种spark参数配置为键值对
+  大多数时间你可以用sparkconf（）创建一个sparkconf对象，这些对象将加载saprk*中的java系统属性,如果见你直接在sparkconf中赋值，这些赋值的属性将覆盖系统属性
+  对于单元测试，你也可以调用sparkconf(false)来跳过外部设置和系统一样的的的相同属性，这个类中所有SEI指的方法支持链式，比如你也可以这样写conf.setMaster('local').setAppName('myapp')
+注意：一旦一个sparkconf对象在spark中运行，他将被克隆，不能被用户在修改
+contain(key)
+ 这个配置是否包含某个key?
+get(key,defaultvalue=none)
+ 获取这个key的默认配置,如果没有返回默认值
+getAll();
+给出所有的键值对列表
+set(key,value)
+设置一个配置属性
+setAppName(value)
+配置应用名称
+setExecutorEnv（key=none,vaule=none,pairs=none）
+为执行器配置环境变量key
+setIfMissing(key,value)
+如果没有设置某个属性如果没有配置他
+setMaster(value)
+设置用来连接的master 的url
+setSparkHome()
+在工作节点上设置spark安装路径
+toDebugString()
+返回一个可以打印的配置，像是一个键值对列表，每个一行
+
+
+
+class 
