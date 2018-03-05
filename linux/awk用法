@@ -2,6 +2,7 @@ awk 用法
 awk 是用来处理文本文件的。
 awk 很强大。
 awk 一般写法 awk '{rule}' filename
+awk 'NR==FNR{a[$1]=$1;next}{if($1 in a)print $0 >>"resoult.txt"}' mdphone.txt phoneNumbers.txt 
 awk 正则匹配写法简单版本 awk '$1 ~/[a-z]$/' filename;$1 代表文件每行的第一个参数，$0代表郑航，$2代表这一行的第二个参数
 awk 兼容c写法，第二个参数可以使用  awk -f awk.rule filename 写法 附加汉字输出规则
 {
