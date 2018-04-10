@@ -22,3 +22,10 @@ awk 兼容c写法，第二个参数可以使用  awk -f awk.rule filename 写法
          print count1"\t"count2
  count} 
 awk 正则规则
+
+
+
+有时候因为要一行行地读文件，所以需要先知道该文件中最长的行的大小。
+　　下面的两个命令就是得到一个文件中的最长行和最短行
+　　最短行：awk '(NR==1||length(min)>length()){min=$0}END{print min}'   data.txt
+　　最长行：awk '{if (length(max)<length()) max=$0}END{print max}'  data.txt
