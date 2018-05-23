@@ -29,3 +29,4 @@ awk 正则规则
 　　下面的两个命令就是得到一个文件中的最长行和最短行
 　　最短行：awk '(NR==1||length(min)>length()){min=$0}END{print min}'   data.txt
 　　最长行：awk '{if (length(max)<length()) max=$0}END{print max}'  data.txt
+  awk 'BEGIN{OFS=","}{print $2,$4}'
