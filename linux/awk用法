@@ -30,3 +30,18 @@ awk 正则规则
 　　最短行：awk '(NR==1||length(min)>length()){min=$0}END{print min}'   data.txt
 　　最长行：awk '{if (length(max)<length()) max=$0}END{print max}'  data.txt
   awk 'BEGIN{OFS=","}{print $2,$4}'
+8.awk
+   {
+    for(i=1;i<=length($1);++i){
+          if(length==10){
+            if(substr($1,5,1)=="D"||substr($1,10,1)=="D")
+                {
+                     print $0
+                     next
+                     count++
+                }
+            }
+         }
+}END{
+ print count
+}
