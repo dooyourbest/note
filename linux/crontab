@@ -1,0 +1,4 @@
+1 crontab -e 中使用绝对路径
+2跑脚本python需要指定解析器  但是最方便的是source ~/.bashrc
+3使用mysql要记得set names utf-8
+4使用corntab -e 失败 >>a.txt 2>>b.txt
